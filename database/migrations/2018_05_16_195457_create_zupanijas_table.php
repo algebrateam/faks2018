@@ -15,6 +15,7 @@ class CreateZupanijasTable extends Migration
     {
         Schema::create('zupanijas', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('naziv');
             $table->timestamps();
         });
     }

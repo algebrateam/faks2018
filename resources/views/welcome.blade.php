@@ -81,7 +81,11 @@
                 <div class="title m-b-md">
                     Laravel
                 </div>
-
+              <div class="links">
+                <a href="{{ route('fakultet') }}">Fakultet</a>
+              </div>
+              <br>
+              <hr>
                 <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>
                     <a href="https://laracasts.com">Laracasts</a>

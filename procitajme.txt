@@ -1,0 +1,6 @@
+composer create-project --prefer-dist laravel/laravel faks2018
+
+~\Code\faks2018> php artisan -V
+Laravel Framework 5.5.40
+~\Code\faks2018> php artisan serve
+Laravel development server started: <http://127.0.0.1:8000>

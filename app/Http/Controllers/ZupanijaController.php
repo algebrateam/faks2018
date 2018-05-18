@@ -4,34 +4,40 @@ namespace App\Http\Controllers;
 
 use App\Zupanija;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class ZupanijaController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index()
     {
-        //
+      $zup = new App\Zupanija;
+      $zup->all();
+
+foreach ($zup as $z) {
+    echo $z->naziv;
+}
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
-        //
+        return "sve zupanije:";
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param  Request  $request
+     * @return Response
      */
     public function store(Request $request)
     {
@@ -41,8 +47,8 @@ class ZupanijaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Zupanija  $zupanija
-     * @return \Illuminate\Http\Response
+     * @param  Zupanija  $zupanija
+     * @return Response
      */
     public function show(Zupanija $zupanija)
     {
@@ -52,8 +58,8 @@ class ZupanijaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Zupanija  $zupanija
-     * @return \Illuminate\Http\Response
+     * @param  Zupanija  $zupanija
+     * @return Response
      */
     public function edit(Zupanija $zupanija)
     {
@@ -63,9 +69,9 @@ class ZupanijaController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Zupanija  $zupanija
-     * @return \Illuminate\Http\Response
+     * @param  Request  $request
+     * @param  Zupanija  $zupanija
+     * @return Response
      */
     public function update(Request $request, Zupanija $zupanija)
     {
@@ -75,8 +81,8 @@ class ZupanijaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Zupanija  $zupanija
-     * @return \Illuminate\Http\Response
+     * @param  Zupanija  $zupanija
+     * @return Response
      */
     public function destroy(Zupanija $zupanija)
     {

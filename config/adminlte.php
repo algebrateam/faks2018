@@ -1,5 +1,6 @@
 <?php
-
+//$brojzupanija=\App\Zupanija::all()->count();
+$brojzupanija= strval(345);
 return [
 
     /*
@@ -116,9 +117,10 @@ return [
         ],
         [
             'text'        => 'Županije',
-            'url'         => 'admin/pages',
+            'url'         => 'zupanija',
             'icon'        => 'angellist',
-            'label'       => 21,
+          //  'label'       => 21,
+          'label'       => $brojzupanija,
             'label_color' => 'success',
         ],
         [

@@ -11,6 +11,10 @@
 |
 */
 Route::resource('zupanija', 'ZupanijaController');
+//Route::get('/zupanija/brojzupanija','ZupanijaController@brojzupanija');
+Route::get('/zupanija/brojzupanija', function () {
+    return App\Zupanija::all()->count();
+});
 
 Route::get('/', function () {
     return view('welcome');

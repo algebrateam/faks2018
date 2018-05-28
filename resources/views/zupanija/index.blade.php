@@ -11,7 +11,7 @@
 @section('content')
   
     @foreach ($zup as $z)
-    <li><a href="zupanija/{{ $z->id }}">{{ $z->naziv }}</a></li>
+    <li><a href="/zupanija/{{ $z->id }}">{{ $z->naziv }}</a></li>
     @endforeach
 
 @stop

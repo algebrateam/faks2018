@@ -5,7 +5,13 @@ namespace App\Http\Controllers;
 use App\Zupanija;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
+use Validator;
 use Illuminate\View\View;
+use function redirect;
+use function view;
 
 class ZupanijaController extends Controller {
 
@@ -70,7 +76,7 @@ class ZupanijaController extends Controller {
    * @return Response
    */
   public function edit(Zupanija $zupanija) {
-    //
+    return view('zupanija.edit')->with('zup',$zupanija);   
   }
 
   /**
@@ -81,7 +87,35 @@ class ZupanijaController extends Controller {
    * @return Response
    */
   public function update(Request $request, Zupanija $zupanija) {
-    //
+        // validate
+        // read more on validation at http://laravel.com/docs/validation
+        $rules = array(
+            'id' => 'required|numeric',
+            'naziv' => 'required|max:191'
+        );
+        $validator = Validator::make(Input::all(), $rules);
+
+        // process the login
+        if ($validator->fails()) {
+            return redirect()->route('zupanija.edit')
+                            ->withErrors($validator)
+                            ->withInput(Input::except('password'));
+//                        return Redirect::to('zupanija/' . $id . '/edit')
+//                            ->withErrors($validator)
+//                            ->withInput(Input::except('password'));
+        } else {
+            // store
+           // $zupanija = Zupanija::find($id);
+            $zupanija ->id = Input::get('id');
+            $zupanija ->naziv = Input::get('naziv');
+            $zupanija->save();
+
+            // redirect
+            Session::flash('message', 'Successfully updated zupanija!');
+            //return Redirect::to('zupanija');
+            return redirect()->route('zupanija.edit', ['id' =>$zupanija->id]);
+        }
+        
   }
 
   /**
@@ -91,7 +125,12 @@ class ZupanijaController extends Controller {
    * @return Response
    */
   public function destroy(Zupanija $zupanija) {
-    //
+     $zupanija->delete();
+
+            // redirect
+            Session::flash('message', 'Successfully updated zupanija!');
+            //return Redirect::to('zupanija');
+            return redirect()->route('zupanija.index');
   }
 
 }

@@ -16,11 +16,10 @@ Broj: {{ $zup->id}} <br>
 
 <br>
 <div class="col-xs-6 col-sm-6 col-md-6">
-                        <input type="submit" class="btn btn-lg btn-success btn-block" value="Edit">
+  <a href="/zupanija/{{ $zup->id}}/edit">Edit</a>
+  <input type="submit" class="btn btn-lg btn-success btn-block" value="Edit">
 					</div>
-<div class="col-xs-6 col-sm-6 col-md-6">
-                        <input type="submit" class="btn btn-lg btn-warning btn-block" value="Delete">
-					</div>
+
 @stop
 
 @section('css')

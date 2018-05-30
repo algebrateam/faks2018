@@ -14,3 +14,23 @@ php artisan make:factory ZupanijaFactory --model Zupanija
 php artisan make:controller ZupanijaController --resource --model=Zupanija
 ------------------
 php artisan make:model Mjesto --migration
+
+-----
+tinker
+-----
+unset($m);
+$m=Mjesto->findorfail(9);
+$m->naziv;
+=> "Kupljenovo"
+$m->naziv='xxy';
+=> "xxy"
+$m->save();
+=> true
+$m->naziv='Kupljenovo';
+=> "Kupljenovo"
+$m->save();
+=> true
+$m->findorfail(9)->zupanija->naziv;
+$z=Zupanija::findorfail(22)->mjesto->all(); 
+
+--------------------------------------

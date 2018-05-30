@@ -16,8 +16,8 @@ Broj: {{ $zup->id}} <br>
 
 <br>
 <div class="col-xs-6 col-sm-6 col-md-6">
-  <a href="/zupanija/{{ $zup->id}}/edit">Edit</a>
-  <input type="submit" class="btn btn-lg btn-success btn-block" value="Edit">
+  <a href="/zupanija/{{ $zup->id}}/edit" class="btn btn-lg btn-success btn-block">Edit</a>
+
 					</div>
 
 @stop

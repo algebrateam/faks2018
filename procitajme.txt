@@ -4,3 +4,13 @@ composer create-project --prefer-dist laravel/laravel faks2018
 Laravel Framework 5.5.40
 ~\Code\faks2018> php artisan serve
 Laravel development server started: <http://127.0.0.1:8000>
+
+
+php artisan make:model Zupanija --migration
+php artisan make:seeder ZupanijasTableSeeder
+php artisan db:seed
+php artisan migrate:refresh --seed
+php artisan make:factory ZupanijaFactory --model Zupanija
+php artisan make:controller ZupanijaController --resource --model=Zupanija
+------------------
+php artisan make:model Mjesto --migration

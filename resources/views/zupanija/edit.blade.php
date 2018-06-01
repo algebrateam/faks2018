@@ -5,6 +5,13 @@
 @section('title', 'Županije Admin panel')
 
 @section('content_header')
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/admin">Fakultet</a></li>
+    <li class="breadcrumb-item"><a href="/zupanija">Županije</a></li>
+    <li class="breadcrumb-item active" aria-current="#">{{ $zup->naziv}}</li>
+  </ol>
+</nav>
 <h1>Uredi županiju {{ $zup->naziv}}</h1>
 @stop
 

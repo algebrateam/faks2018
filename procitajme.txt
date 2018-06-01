@@ -1,5 +1,7 @@
 composer create-project --prefer-dist laravel/laravel faks2018
 
+// https://github.com/jeroennoten/Laravel-AdminLTE
+
 ~\Code\faks2018> php artisan -V
 Laravel Framework 5.5.40
 ~\Code\faks2018> php artisan serve
@@ -35,3 +37,15 @@ $m->findorfail(9)->zupanija->naziv;
 $z=Zupanija::findorfail(22)->mjesto->all(); 
 
 --------------------------------------
+POKRENI TESTOVE:
+
+~\Code\faks2018 [master ≡ +0 ~6 -0 !]> .\vendor\bin\phpunit
+PHPUnit 6.5.8 by Sebastian Bergmann and contributors.
+
+..                                                                  2 / 2 (100%)
+
+Time: 417 ms, Memory: 10.00MB
+
+OK (2 tests, 2 assertions)
+
+------------------------------

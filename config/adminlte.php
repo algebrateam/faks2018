@@ -123,6 +123,13 @@ return [
           'label'       => $brojzupanija,
             'label_color' => 'success',
         ],
+              [
+            'text'        => 'Mjesta',
+            'url'         => 'mjesto',
+            'icon'        => 'map-marker',//https://fontawesome.com/icons?d=gallery&q=place&m=free
+            'label'       => 88,
+            'label_color' => 'success',
+        ],
         [
             'text'        => 'Pages',
             'url'         => 'admin/pages',

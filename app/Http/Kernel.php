@@ -18,7 +18,11 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
-        \App\Http\Middleware\TrustProxies::class,
+      // Edit prema: https://stackoverflow.com/questions/48594851/upgrading-laravel-5-5-to-5-6-error 
+      // Brisem ovo:
+      // \App\Http\Middleware\TrustProxies::class,
+      // Dodajem ovo:
+      \App\Http\Middleware\TrustProxies::class
     ];
 
     /**

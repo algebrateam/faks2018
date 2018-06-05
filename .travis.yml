@@ -1,0 +1,13 @@
+language: php
+php:
+  - '7.1'
+
+before_script:
+  - cp .env.travis .env
+  - mysql -e 'create database faks2018;'
+  - composer self-update
+  - composer require --dev phpunit/phpunit ^7.0
+  #- composer install --no-interaction
+
+script:
+  - vendor/bin/phpunit --debug --bootstrap vendor/autoload.php tests/

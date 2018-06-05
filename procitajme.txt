@@ -49,3 +49,16 @@ Time: 417 ms, Memory: 10.00MB
 OK (2 tests, 2 assertions)
 
 ------------------------------
+DUSK TESTIRANJE:
+
+composer require --dev laravel/dusk
+php artisan dusk:install
+php artisan dusk:make ZupanijaBrowserTest
+php artisan dusk
+// ERROR:gpu_process_transport_factory.cc(1017)] Lost UI shared context.
+
+
+
+
+
+

@@ -16,4 +16,8 @@ class ExampleTest extends TestCase
     {
         $this->assertTrue(true);
     }
+    public function testzbrojimiovo($a=3,$b=2){
+        $rez=$a+$b;
+        $this->assertEquals($a+$b,$rez);
+    }
 }

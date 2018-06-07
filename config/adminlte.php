@@ -115,6 +115,14 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
+       [
+            'text'        => 'Dvorane',
+            'url'         => 'dvorana',
+            'icon'        => 'bicycle',
+          //  'label'       => 21,
+          'label'       => 5,
+            'label_color' => 'success',
+        ],
         [
             'text'        => 'Županije',
             'url'         => 'zupanija',

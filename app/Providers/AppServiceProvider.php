@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Providers;
-
-use Illuminate\Events\Dispatcher;
+use Illuminate\Contracts\Events\Dispatcher;
+use JeroenNoten\LaravelAdminLte\Events\BuildingMenu;
+//use Illuminate\Events\Dispatcher;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
@@ -18,6 +19,7 @@ class AppServiceProvider extends ServiceProvider
 //    {
 //         Schema::defaultStringLength(191);
 //    }
+
     public function boot(Dispatcher $events)
     {
       // Ovo mi rješava problem email polja baze podataka
